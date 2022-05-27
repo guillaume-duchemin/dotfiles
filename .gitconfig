@@ -12,6 +12,7 @@
 	pager = delta --theme="night-owlish"
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore_global
+	ignorecase = false
 [interactive]
 	diffFilter = delta --color-only
 [web]
