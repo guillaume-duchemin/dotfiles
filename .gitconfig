@@ -2,11 +2,14 @@
 # 	name = Guillaume Duchemin
 # 	email = guillaume.duchemin@gmail.com
 
-[includeIf “gitdir:~/workspaces/perso/”] # include for all .git projects under /workspaces/perso/ 
-path = ~/personal/.gitconfig.pers
+[includeIf "gitdir:~/workspaces/config/"] # include for all .git projects under /workspaces/config/ 
+path = ~/workspaces/perso/.gitconfig.pers
+
+[includeIf "gitdir:~/workspaces/perso/"] # include for all .git projects under /workspaces/perso/ 
+path = ~/workspaces/perso/.gitconfig.pers
  
-[includeIf “gitdir:~/workspaces/work/monop”] # include for all .git projects under /workspaces/work/monop/
-path = ~/work/.gitconfig.monop
+[includeIf "gitdir:~/workspaces/work/monop/"] # include for all .git projects under /workspaces/work/monop/
+path = ~/workspaces/work/monop/.gitconfig.monop
 
 [init]
 	defaultBranch = main
