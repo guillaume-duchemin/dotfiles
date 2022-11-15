@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/openjdk@11/bin:/usr/local/opt/python@3.10/bin:$HOME/.pyenv/versions/2.7.18/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 alias cz="code ~/.zshrc";
 alias sz="source ~/.zshrc";
 alias ohmyzsh="code ~/.oh-my-zsh"
+alias gitalias="code ~/.oh-my-zsh/plugins/git/git.plugin.zsh";
 alias ll="ls -1a";
 alias k="kubectl";
 
@@ -102,54 +103,15 @@ PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NODE_PATH=`which node`
-
-########################################################################################
-########################################################################################
-############################### MONOPRIX SPECIFIC CONFIG ###############################
-########################################################################################
-########################################################################################
+export NODE_OPTIONS=--max_old_space_size=8192
+export JAVA_HOME="/usr/local/opt/openjdk/bin"
+export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
+export PYTHON="$HOME/.pyenv/versions/2.7.18/bin/python"
 
 
-#### GCP SDK ####
+################## WORK ##################
+# ALIAS FOR DISNEY
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/taku/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/taku/google-cloud-sdk/path.zsh.inc'; fi
+alias fantasia-link="npm link @dlp/fantasia-ds & npm link ../fantasia-ds/node_modules/@types/react & npm link ../fantasia-ds/node_modules/react";
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/taku/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/taku/google-cloud-sdk/completion.zsh.inc'; fi
-
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/workspaces/work/monop/service_account/service-account.json"
-
-#### K8S & KUBCTL ####
-
-source <(kubectl completion zsh)
-
-# kubernetes port-forward
-export MPX_DIRECTORY=~/workspaces/work/monop
-export SCRIPTS_DIRECTORY=${MPX_DIRECTORY}/dev-tools/kubectl/
-alias kubpf=$SCRIPTS_DIRECTORY'kubectlPortForward.sh'
-alias kubmongopf=$SCRIPTS_DIRECTORY'kubectlPortForwardMongo.sh'
-alias kublog=$SCRIPTS_DIRECTORY'kubectlLog.sh'
-alias kublogs=$SCRIPTS_DIRECTORY'kubectlLogs.sh'
-alias kubssh=$SCRIPTS_DIRECTORY'kubectlSsh.sh'
-
-alias kubgpf=$SCRIPTS_DIRECTORY'pf-graphql.sh'
-alias kubepf=$SCRIPTS_DIRECTORY'pf-export.sh'
-alias kubbpf=$SCRIPTS_DIRECTORY'pf-bo.sh'
-alias kubupf=$SCRIPTS_DIRECTORY'pf-utils.sh'
-alias kubdpf=$SCRIPTS_DIRECTORY'pf-digest.sh'
-alias kubpepf=$SCRIPTS_DIRECTORY'pf-price-engine.sh'
-
-alias kubpspf=$SCRIPTS_DIRECTORY'pf-ps.sh'
-
-alias kub='/usr/local/bin/kubectl'
-alias kubnd='kubectl config use-context ninja-dev'
-alias kubnpp='kubectl config use-context ninja-preprod'
-alias kubnp='kubectl config use-context ninja-prod'
-alias kk='killall kubectl'
-
-complete -F __start_kubectl kub
-
-#### WORK SETTINGS ####
-
-alias openmonop="code $MPX_DIRECTORY/monop.code-workspace"
+alias fantasia-unlink="npm unlink @dlp/fantasia-ds & npm unlink ../fantasia-ds/node_modules/@types/react & npm unlink ../fantasia-ds/node_modules/react";

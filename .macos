@@ -49,9 +49,11 @@ echo "brew installing stuff"
 # mas: install app from mac store
 # fzf: command line fuzzy finder 
 # htop: activity monitor cli
+# nginx: server web
 
 brew install git watchman tree bat git-delta grep z zsh mas fzf \
-font-fira-code font-roboto-mono font-roboto font-source-code-pro font-source-sans-pro htop
+font-fira-code font-roboto-mono font-roboto font-source-code-pro font-source-sans-pro htop \
+nginx
 
 echo "installing node"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
@@ -70,8 +72,9 @@ echo "installing apps with brew cask"
 # dash: POSIX-compliant implementation of /bin/sh that aims to be as small as possible
 # obs: Open-source software for live streaming and screen recording
 # betterzip: Utility to create and modify archives
+# background-music: Control audio on a per-app basis
 
-brew install --cask alfred google-chrome firefox spectacle visual-studio-code dash \
+brew install --cask alfred google-chrome firefox spectacle visual-studio-code dash background-music\
 vlc discord obs betterzip spotify slack docker iterm2 signal
 
 echo "installing Xcode"

@@ -35,3 +35,6 @@ Session.vim
 .eslintcache
 
 .env
+
+#scala
+.metals

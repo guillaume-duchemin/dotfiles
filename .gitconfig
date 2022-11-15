@@ -8,8 +8,8 @@ path = ~/workspaces/perso/.gitconfig.pers
 [includeIf "gitdir:~/workspaces/perso/"] # include for all .git projects under /workspaces/perso/ 
 path = ~/workspaces/perso/.gitconfig.pers
  
-[includeIf "gitdir:~/workspaces/work/monop/"] # include for all .git projects under /workspaces/work/monop/
-path = ~/workspaces/work/monop/.gitconfig.monop
+[includeIf "gitdir:~/workspaces/work/disney/repos/"] # include for all .git projects under /workspaces/work/monop/
+path = ~/workspaces/work/disney/repos/.gitconfig.disney
 
 [init]
 	defaultBranch = main
